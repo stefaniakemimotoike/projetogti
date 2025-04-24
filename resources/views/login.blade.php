@@ -1,5 +1,8 @@
 @vite (['resources/css/app.css','resources/js/app.js'])
 
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <h2 class="mb-4 text-4xl font-extrabold text-center text-gray-900 dark:text-white">Entrar no Sistema</h2>
 
 <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -12,20 +15,33 @@
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Entre em sua Conta
               </h1>
-              @error('email')
+        @error('email')
    <div class=" bg-red-300 rounded-2xl text-red-900 p-4">{{ $message }}</div>
-@enderror
-<form action="{{route('login')}}" method="POST" class="space-y-8">
-        @csrf  
+        @enderror
+        <form method="GET" action="/login" class="space-y-8">
+         
+        <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+
+    <form method="POST" action="{{ route('logar') }}">
+        
+    
+
               <form class="space-y-4 md:space-y-6" action="#">
-                  <div>
+            <div>
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seu email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
-                  </div>
-                  <div>
+            </div>
+            <div>
                       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sua senha</label>
                       <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
-                  </div>
+            </div>
                   <div class="flex items-center justify-between">
                       <div class="flex items-start">
                           <div class="flex items-center h-5">
@@ -41,8 +57,8 @@
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Ainda não tem uma conta? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                   </p>
-              </form>
-          </div>
+        </form>
+    </div>
       </div>
   </div>
 </section>
