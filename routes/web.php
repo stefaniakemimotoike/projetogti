@@ -59,4 +59,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/cadastra-equipe', function () {
     return view('cadastra-equipe');
-})->name('cadastra-equipe');
+})->name('cadastra-equipe')->middleware('auth');
+
+
+auth::logout();
+$request->session()->regenerate();
+return redirect ->route('/');
